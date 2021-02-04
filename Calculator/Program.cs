@@ -35,6 +35,7 @@ namespace Calculator
 			return a + b;
 		}
 
+
 		public double Subtract(double a, double b)
 		{
 			return a - b;
@@ -48,6 +49,22 @@ namespace Calculator
 		public double Power(double x, double exp)
 		{
 			return Math.Pow(x, exp);
+		}
+
+		public double Divide(double dividend, double divisor)
+		{
+			double result;
+
+			try
+			{
+				result = dividend / divisor;
+			}
+			catch (DivideByZeroException)
+			{
+				throw 
+			}
+
+			return result;
 		}
 
 	}
