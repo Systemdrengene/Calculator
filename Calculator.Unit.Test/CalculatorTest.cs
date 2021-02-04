@@ -9,6 +9,7 @@ namespace Calculator.Test.Unit
 		[SetUp]
 		public void Setup()
 		{
+
 		}
 
 		[Test]
@@ -71,5 +72,26 @@ namespace Calculator.Test.Unit
 
 			Assert.That(4, Is.EqualTo(ans));
 		}
+
+		[Test]
+		public void Divide_NonZero_EqualTrue()
+		{
+			var uut = new calculator();
+			var ans = uut.Divide(6, 2);
+			Assert.AreEqual(3,ans);
+		}
+
+		[Test]
+		public void Divide_Zero_EqualThrow()
+		{
+			var uut = new calculator();
+			var ans = uut.Divide(6, 0);
+			Assert.IsNotNull(ans);
+
+			
+		}
+
+
+
 	}
 }

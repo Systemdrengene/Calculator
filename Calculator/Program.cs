@@ -35,6 +35,7 @@ namespace Calculator
 			return a + b;
 		}
 
+
 		public double Subtract(double a, double b)
 		{
 			return a - b;
@@ -52,6 +53,22 @@ namespace Calculator
 
 		double AccSum;
 		public double Accumulator { get { return AccSum; } private set { AccSum += value; } }
+
+		public double Divide(double dividend, double divisor)
+		{
+			double result;
+
+			try
+			{
+				result = dividend / divisor;
+			}
+			catch (DivideByZeroException)
+			{
+				throw 
+			}
+
+			return result;
+		}
 
 		public double Add(double addend)
         {
