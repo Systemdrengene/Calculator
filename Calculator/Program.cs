@@ -87,7 +87,7 @@ namespace Calculator
 			if (divisor == 0)
 			{
 				Console.WriteLine("Divisor cant be 0\n");
-				return -1;
+				throw new DivideByZeroException();
 			}
 			return Accumulator = Accumulator / divisor;
 		}
