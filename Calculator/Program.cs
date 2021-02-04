@@ -67,6 +67,33 @@ namespace Calculator
 			return result;
 		}
 
+		public double Add(double addend)
+        {
+			return Accumulator.set(Accumulator.get() + addend);
+        }
+		public double Subtract(double subtractor)
+		{
+			return Accumulator.set(Accumulator.get() - subtractor);
+		}
+		public double Multiply(double multiplier)
+		{
+			return Accumulator.set(Accumulator.get() * multiplier);
+		}
+		public double Divide(double divisor)
+		{
+			if (divisor == 0)
+			{
+				Console.WriteLine("Divisor cant be 0\n");
+				return -1;
+			}
+			return Accumulator.set(Accumulator.get() / divisor);
+		}
+		public double Power(double exponent)
+		{
+			return Accumulator.set(Accumulator.get()**exponent);
+		}
+
+
 	}
 
 }
