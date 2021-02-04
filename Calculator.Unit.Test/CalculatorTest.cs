@@ -1,7 +1,7 @@
 using NUnit.Framework;
 
 
-namespace Calculator.Unit.Test
+namespace Calculator.Test.Unit
 {
 	[TestFixture]
 	public class CalculatorTests
@@ -55,12 +55,21 @@ namespace Calculator.Unit.Test
 		}
 
 		[Test]
-		public void PowerTest_PositiveInteger_Equal()
+		public void PowerTest_PositiveInteger_EqualTrue()
 		{
 			var calc = new calculator();
 			var calculated = calc.Power(4, 2);
 			Assert.AreEqual(16,calculated);
 		}
 
+		[Test]
+		public void Power_NegativeInteger_EqualTrue()
+		{	
+			var uut = new calculator();
+            
+			var ans = uut.Power(-2, 2);
+
+			Assert.That(4, Is.EqualTo(ans));
+		}
 	}
 }
