@@ -51,6 +51,9 @@ namespace Calculator
 			return Math.Pow(x, exp);
 		}
 
+		double AccSum;
+		public double Accumulator { get { return AccSum; } private set { AccSum += value; } }
+
 		public double Divide(double dividend, double divisor)
 		{
 			double result;
