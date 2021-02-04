@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 
@@ -85,10 +86,8 @@ namespace Calculator.Test.Unit
 		public void Divide_Zero_EqualThrow()
 		{
 			var uut = new calculator();
-			var ans = uut.Divide(6, 0);
-			Assert.IsNotNull(ans);
+			Assert.Catch<DivideByZeroException>(()=>uut.Divide(6,0));
 
-			
 		}
 
 
