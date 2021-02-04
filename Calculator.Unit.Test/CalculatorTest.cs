@@ -1,5 +1,5 @@
 using NUnit.Framework;
-
+using System;
 
 namespace Calculator.Test.Unit
 {
@@ -71,5 +71,53 @@ namespace Calculator.Test.Unit
 
 			Assert.That(4, Is.EqualTo(ans));
 		}
+
+        [Test]
+        public void Power_NegativeExponent_EqualTrue()
+        {
+            var uut = new calculator();
+
+            var ans = uut.Power(2, -2);
+
+            Assert.That(0.25, Is.EqualTo(ans));
+        }
+
+        [Test]
+        public void Power_NegativeExponentAndInteger_EqualTrue()
+        {
+            var uut = new calculator();
+
+            var ans = uut.Power(-2, -2);
+
+            Assert.That(0.25, Is.EqualTo(ans));
+        }
+
+        [Test]
+        public void Power_DecimalIntegerNegativeExponent_EqualTrue()
+        {
+            var uut = new calculator();
+
+            var ans = uut.Power(0.5, -2);
+
+            Assert.That(4, Is.EqualTo(ans));
+        }
+
+        [Test]
+        public void Power_DecimalIntegerAndExponentDecimal_EqualTrue()
+        {
+            var uut = new calculator();
+
+            var ans = uut.Power(0.5, 0.5);
+
+            Assert.That(Math.Sqrt(0.5), Is.EqualTo(ans));
+        }
+
+        [Test]
+        public void Power_NegIntegerAndExponentDecimal_EqualTrue()
+        {
+            var uut = new calculator();
+
+            Assert.Catch<ArithmeticException>(() => uut.Power(-0.5, 0.5) );
+        }
 	}
 }
