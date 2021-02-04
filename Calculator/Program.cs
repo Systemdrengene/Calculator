@@ -55,15 +55,15 @@ namespace Calculator
 
 		public double Add(double addend)
         {
-			return Accumulator.set(Accumulator.get() + addend);
+			return Accumulator = Accumulator + addend;
         }
 		public double Subtract(double subtractor)
 		{
-			return Accumulator.set(Accumulator.get() - subtractor);
+			return Accumulator = Accumulator - subtractor;
 		}
 		public double Multiply(double multiplier)
 		{
-			return Accumulator.set(Accumulator.get() * multiplier);
+			return Accumulator = Accumulator * multiplier;
 		}
 		public double Divide(double divisor)
 		{
@@ -72,13 +72,12 @@ namespace Calculator
 				Console.WriteLine("Divisor cant be 0\n");
 				return -1;
 			}
-			return Accumulator.set(Accumulator.get() / divisor);
+			return Accumulator = Accumulator / divisor;
 		}
 		public double Power(double exponent)
 		{
-			return Accumulator.set(Accumulator.get()**exponent);
+			return Accumulator = Math.Pow(Accumulator,exponent);
 		}
-
 
 	}
 
