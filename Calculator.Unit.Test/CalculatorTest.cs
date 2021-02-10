@@ -90,11 +90,6 @@ namespace Calculator.Test.Unit
 
 		}
 
-
-
-			Assert.That(4, Is.EqualTo(ans));
-		}
-
         [Test]
         public void Power_NegativeExponent_EqualTrue()
         {
