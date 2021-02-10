@@ -51,9 +51,16 @@ namespace Calculator
 		}
 
 		public double Power(double x, double exp)
-		{
-			return Math.Pow(x, exp);
-		}
+        {
+            double result;
+            result = Math.Pow(x, exp);
+
+			if (Double.IsNaN(result))
+                throw new ArithmeticException();
+
+            return result;
+
+        }
 
 		double AccSum;
 		public double Accumulator { get { return AccSum; } private set { AccSum += value; } }
