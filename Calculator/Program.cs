@@ -11,7 +11,7 @@ namespace Calculator
 			calculator cal = new calculator();
 
 			double a = 10;
-			double b = 0;
+			double b = 5;
 
 			double result;
 			double resultDivide;
@@ -28,7 +28,7 @@ namespace Calculator
 			result = cal.Power(a, b);
 			Console.WriteLine("Power result: " + result);
 
-			resultDivide = cal.Divide(5, 0);
+			resultDivide = cal.Divide(a, b);
 			Console.WriteLine("Divide result: " + resultDivide);
 
 		}
