@@ -137,5 +137,15 @@ namespace Calculator.Test.Unit
 
             Assert.Catch<ArithmeticException>(() => uut.Power(-0.5, 0.5) );
         }
+
+		[Test]
+		public void Power_PosIntegerAndExponentDecimal_EqualTrue()
+		{
+			var uut = new calculator();
+			var ans = uut.Power(1, 2);
+
+			Assert.That(1, Is.EqualTo(ans));
+		}
+
 	}
 }
