@@ -6,6 +6,11 @@ namespace Calculator
 {
 	public class calculator
 	{
+		public calculator()
+		{
+			Accumulator = 0;
+		}
+
 		static void Main(string[] args)
 		{
 			calculator cal = new calculator();
@@ -61,9 +66,13 @@ namespace Calculator
             return result;
 
         }
+		
+		public double Accumulator { get; private set; }
 
-		double AccSum;
-		public double Accumulator { get { return AccSum; } private set { AccSum += value; } }
+		public double Clear()
+        {
+			return Accumulator = 0;
+        }
 
 		public double Divide(double dividend, double divisor)
 		{
@@ -83,15 +92,15 @@ namespace Calculator
 
 		public double Add(double addend)
         {
-			return Accumulator = Accumulator + addend;
+			return Accumulator += addend;
         }
 		public double Subtract(double subtractor)
 		{
-			return Accumulator = Accumulator - subtractor;
+			return Accumulator -= subtractor;
 		}
 		public double Multiply(double multiplier)
 		{
-			return Accumulator = Accumulator * multiplier;
+			return Accumulator *= multiplier;
 		}
 		public double Divide(double divisor)
 		{
@@ -100,7 +109,7 @@ namespace Calculator
 				Console.WriteLine("Divisor cant be 0\n");
 				throw new DivideByZeroException();
 			}
-			return Accumulator = Accumulator / divisor;
+			return Accumulator /= divisor;
 		}
 		public double Power(double exponent)
 		{
