@@ -113,7 +113,11 @@ namespace Calculator
 		}
 		public double Power(double exponent)
 		{
-			return Accumulator = Math.Pow(Accumulator,exponent);
+			Accumulator = Math.Pow(Accumulator, exponent);
+			if (Double.IsNaN(Accumulator))
+				throw new ArithmeticException();
+
+			return Accumulator;
 		}
 
 	}

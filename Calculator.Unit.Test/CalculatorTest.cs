@@ -253,6 +253,14 @@ namespace Calculator.Test.Unit
 		}
 
 		[Test]
+		public void DivisionAccumulator_ZeroInteger_EqualThrow()
+		{
+			var calc = new calculator();
+			calc.Add(6);
+			Assert.Catch<DivideByZeroException>(() => calc.Divide(0));
+		}
+
+		[Test]
 		public void PowerAccumulator_NegativeAndPositiveInteger_Equal()
 		{
 			var calc = new calculator();
@@ -261,7 +269,13 @@ namespace Calculator.Test.Unit
 			Assert.AreEqual(65536, calculated);
 		}
 
-
+		[Test]
+		public void PowerAccumulator_NegativeAndPositiveDouble_EqualThrow()
+		{
+			var calc = new calculator();
+			calc.Add(-0.5);
+			Assert.Catch<ArithmeticException>(() => calc.Power(0.5));
+		}
 
 		[Test]
 		public void ClearAccumulator_Equal()
