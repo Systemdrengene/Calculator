@@ -88,6 +88,14 @@ namespace Calculator.Test.Unit
 			Assert.AreEqual(0, calculated);
 		}
 
+		[Test]
+		public void MultiplyAccumulatorTest_OneInteger_Equal()
+		{
+			var calc = new calculator();
+			var calculated = calc.Multiply(6.4);
+			Assert.AreEqual(0, calculated);
+		}
+
 
 		[Test]
 		public void Power_PositiveInteger_Equal()
@@ -209,6 +217,7 @@ namespace Calculator.Test.Unit
 			Assert.AreEqual(-4, calculated);
 		}
 
+		[Test]
 		public void AdditionAccumulator_PositiveInteger_Equal()
 		{
 			var calc = new calculator();
